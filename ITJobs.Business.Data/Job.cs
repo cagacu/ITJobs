@@ -24,6 +24,10 @@ namespace ITJobs.Business.Data
         public long LocationId { get; set; }
         public long JobTypeId { get; set; }
         public System.DateTime PostDateTime { get; set; }
+        public System.DateTime CreateDate { get; set; }
+        public string CreateBy { get; set; }
+        public Nullable<System.DateTime> UpdateDate { get; set; }
+        public string UpdateBy { get; set; }
     
         public virtual Category Category { get; set; }
         public virtual Company Company { get; set; }

@@ -38,6 +38,31 @@ namespace ITJobs.Business
             return returnList;
         }
 
+        public void AddNewJob(JobEntity newJob)
+        {
+            using(ITJobContext context = new ITJobContext())
+            {
+                ITJobRepository<Job, JobEntity> repository = ITJobRepository<Job, JobEntity>.CreateRepository(context);
+                newJob.CreateBy = String.Empty;
+                newJob.CreateDate = DateTime.Now; 
+                repository.InsertEntity(newJob);
+                repository.Save();
+            }
+        }
+
+        public void UpdateJob(JobEntity updateJob)
+        {
+            using (ITJobContext context = new ITJobContext())
+            {
+                ITJobRepository<Job, JobEntity> repository = ITJobRepository<Job, JobEntity>.CreateRepository(context);
+                updateJob.UpdateDate = DateTime.Now;
+                repository.UpdateEntity(updateJob);
+                repository.Save();
+            }
+
+        }
+
+
     }
 }
 

@@ -11,13 +11,19 @@ using System.Threading.Tasks;
 
 namespace ITJobs.Business.Data.Repository
 {
-    public class ITJobRepository<T,E> : Repository<T,E> 
-        where T: class 
+    public class ITJobRepository<T, E> : Repository<T, E>
+        where T : class
         where E : IEntity
     {
-        public ITJobRepository(ITJobContext context) : base(context,new QueryManager<T>())
+        public ITJobRepository(ITJobContext context)
+            : base(context, new QueryManager<T>())
         {
-        
+
+        }
+
+        public static ITJobRepository<T, E> CreateRepository(ITJobContext context)
+        {
+            return new ITJobRepository<T, E>(context);
         }
 
     }

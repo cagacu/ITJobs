@@ -36,6 +36,10 @@
           <Property Name="LocationId" Type="bigint" Nullable="false" />
           <Property Name="JobTypeId" Type="bigint" Nullable="false" />
           <Property Name="PostDateTime" Type="datetime" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="CreateBy" Type="nvarchar" MaxLength="150" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="UpdateBy" Type="nvarchar" MaxLength="150" />
         </EntityType>
         <EntityType Name="JobType">
           <Key>
@@ -163,6 +167,10 @@
           <NavigationProperty Name="JobType" Relationship="Self.FK_Job_JobType" FromRole="Job" ToRole="JobType" />
           <NavigationProperty Name="Location" Relationship="Self.FK_Job_Location" FromRole="Job" ToRole="Location" />
           <Property Name="PostDateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreateBy" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdateBy" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="JobType">
           <Key>
@@ -279,6 +287,10 @@
           <EntitySetMapping Name="Job">
             <EntityTypeMapping TypeName="ITJobsModel.Job">
               <MappingFragment StoreEntitySet="Job">
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
                 <ScalarProperty Name="PostDateTime" ColumnName="PostDateTime" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Title" ColumnName="Title" />

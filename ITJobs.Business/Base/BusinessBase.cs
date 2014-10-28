@@ -12,5 +12,6 @@ namespace ITJobs.Business.Base
         where E :IEntity
     {
         
+
     }
 }

@@ -169,8 +169,6 @@ namespace ITJobs.Business.Data.Base
         public void Save()
         {
             context.SaveChanges();
-        }
-
-        
+        }        
     }
 }
