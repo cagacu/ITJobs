@@ -1,7 +1,52 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Index";
+
 }
 
-<h2>Index</h2>
+@model ITJobs.ViewModels.AddJobViewModel
+
+@using (Html.BeginForm("Create", "Default", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    @Html.LabelFor(m => m.Title)
+    @Html.TextBoxFor(m => m.Title)
+
+    @Html.LabelFor(m => m.CategoryId)
+    @Html.DropDownListFor(m => m.CategoryId, Model.CategoryList)
+
+    @Html.LabelFor(m => m.LocationId)
+    @Html.DropDownListFor(m => m.LocationId, Model.LocationList)
+
+    @Html.LabelFor(m => m.JobTypeId)
+    @Html.DropDownListFor(m => m.JobTypeId, Model.JobTypeList)
+
+    @Html.LabelFor(m => m.Description)
+    @Html.TextAreaFor(m => m.Description)
+
+    @Html.LabelFor(m => m.ImageFile)
+    <input type="file" name="ImageFile" id="ImageFile" />
+
+    @Html.LabelFor(m => m.JobContactEmail)
+    @Html.TextBoxFor(m => m.JobContactEmail)
+
+
+    @Html.LabelFor(m => m.CompanyName)
+    @Html.TextBoxFor(m => m.CompanyName)
+
+    @Html.LabelFor(m => m.CompanyLogoFile)
+    <input type="file" name="LogoFile" id="LogoFile" />
+    
+    @Html.LabelFor(m => m.CompanyUrl)
+    @Html.TextBoxFor(m => m.CompanyUrl)
+    
+    @Html.LabelFor(m => m.CompanyContactEmail)
+    @Html.TextBoxFor(m => m.CompanyContactEmail)
+
+    <input type="submit" value="Kaydet" />
+
+
+}
+
+
+
 

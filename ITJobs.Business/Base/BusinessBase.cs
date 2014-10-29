@@ -11,7 +11,6 @@ namespace ITJobs.Business.Base
         where T:class 
         where E :IEntity
     {
-        
 
     }
 }

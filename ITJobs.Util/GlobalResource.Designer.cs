@@ -59,5 +59,104 @@ namespace ITJobs.Util {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Company E-mail.
+        /// </summary>
+        internal static string CompanyContactEmail {
+            get {
+                return ResourceManager.GetString("CompanyContactEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Company Logo (optional).
+        /// </summary>
+        internal static string CompanyLogoFile {
+            get {
+                return ResourceManager.GetString("CompanyLogoFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Company Name.
+        /// </summary>
+        internal static string CompanyName {
+            get {
+                return ResourceManager.GetString("CompanyName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Company Website Url.
+        /// </summary>
+        internal static string CompanyUrl {
+            get {
+                return ResourceManager.GetString("CompanyUrl", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Category.
+        /// </summary>
+        internal static string JobCategoryId {
+            get {
+                return ResourceManager.GetString("JobCategoryId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contact E-mail.
+        /// </summary>
+        internal static string JobContactEmail {
+            get {
+                return ResourceManager.GetString("JobContactEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Job Description.
+        /// </summary>
+        internal static string JobDescription {
+            get {
+                return ResourceManager.GetString("JobDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Featured Image (optional).
+        /// </summary>
+        internal static string JobImagePath {
+            get {
+                return ResourceManager.GetString("JobImagePath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Location.
+        /// </summary>
+        internal static string JobLocationId {
+            get {
+                return ResourceManager.GetString("JobLocationId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Job Title.
+        /// </summary>
+        internal static string JobTitle {
+            get {
+                return ResourceManager.GetString("JobTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Job Type.
+        /// </summary>
+        internal static string JobTypeId {
+            get {
+                return ResourceManager.GetString("JobTypeId", resourceCulture);
+            }
+        }
     }
 }

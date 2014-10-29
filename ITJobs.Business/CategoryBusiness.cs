@@ -12,6 +12,8 @@ namespace ITJobs.Business
 {
     public class CategoryBusiness : BusinessBase<Category, CategoryEntity>
     {
+
+
         public List<CategoryEntity> GetList()
         {
             List<CategoryEntity> returnList = new List<CategoryEntity>();

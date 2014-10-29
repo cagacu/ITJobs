@@ -92,8 +92,8 @@ namespace ITJobs.Business.Data.Base
             IQuerySegments<T> segment = queryManager.CreateSegment();
             segment.SelectFields = selectFields;
             segment.WhereCondition = whereCondition;
-            Query = queryManager.ApplyQuerySegments(segment);
-            return Query.ToList<T>();
+            var query = queryManager.ApplyQuerySegments(segment);
+            return query.ToList<T>();
         }
 
         public List<E> GetEntityList(System.Linq.Expressions.Expression<Func<T, bool>> whereCondition)
