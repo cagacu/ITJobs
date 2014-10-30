@@ -10,7 +10,7 @@ namespace ITJobs.Business.Data.Mapping
     public class EntityMapper
     {
         /// <summary>
-        /// Map database object to DTO
+        /// Map object to DTO
         /// </summary>
         /// <typeparam name="E"></typeparam>
         /// <typeparam name="T"></typeparam>
@@ -52,5 +52,6 @@ namespace ITJobs.Business.Data.Mapping
             });
             return returnList;
         }
+   
     }
 }

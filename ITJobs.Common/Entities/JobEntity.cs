@@ -12,7 +12,7 @@ namespace ITJobs.Common.Entities
         public long Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public string ImagePath { get; set; }
+        public byte[] Image { get; set; }
         public string ContactInfo { get; set; }
         public long CompanyId { get; set; }
         public long CategoryId { get; set; }

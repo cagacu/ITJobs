@@ -30,5 +30,6 @@ namespace ITJobs.Business.Data
         public virtual DbSet<Job> Job { get; set; }
         public virtual DbSet<JobType> JobType { get; set; }
         public virtual DbSet<Location> Location { get; set; }
+        public virtual DbSet<Status> Status { get; set; }
     }
 }

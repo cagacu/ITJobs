@@ -17,7 +17,6 @@ namespace ITJobs.Business.Data
         public long Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public string ImagePath { get; set; }
         public string ContactInfo { get; set; }
         public long CompanyId { get; set; }
         public long CategoryId { get; set; }
@@ -28,10 +27,13 @@ namespace ITJobs.Business.Data
         public string CreateBy { get; set; }
         public Nullable<System.DateTime> UpdateDate { get; set; }
         public string UpdateBy { get; set; }
+        public byte[] Image { get; set; }
+        public long Status { get; set; }
     
         public virtual Category Category { get; set; }
         public virtual Company Company { get; set; }
         public virtual JobType JobType { get; set; }
         public virtual Location Location { get; set; }
+        public virtual Status Status1 { get; set; }
     }
 }

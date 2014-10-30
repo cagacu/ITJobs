@@ -12,18 +12,16 @@ namespace ITJobs.Business.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class Company
+    public partial class Status
     {
-        public Company()
+        public Status()
         {
             this.Job = new HashSet<Job>();
         }
     
         public long Id { get; set; }
-        public string Name { get; set; }
-        public string Url { get; set; }
-        public string ContactEmail { get; set; }
-        public byte[] Logo { get; set; }
+        public string ResourceKey { get; set; }
+        public string Description { get; set; }
     
         public virtual ICollection<Job> Job { get; set; }
     }

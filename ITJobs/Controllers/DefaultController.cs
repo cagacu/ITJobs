@@ -1,10 +1,12 @@
 ﻿using ITJobs.Business;
-using ITJobs.Common.Base;
+using ITJobs.Business.Data.Mapping;
 using ITJobs.Common.Entities;
 using ITJobs.Resource;
+using ITJobs.UI.Base;
 using ITJobs.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -37,8 +39,30 @@ namespace ITJobs.Controllers
 
             if (ModelState.IsValid)
             {
-                model.ImageFile.SaveAs("Hebel");
+                byte[] image = null;
+                using(Stream sw = model.ImageFile.InputStream)
+                {
+                    image = new byte[model.ImageFile.ContentLength];
+                    sw.Read(image, 0, model.ImageFile.ContentLength);
+                }
 
+                JobEntity job = EntityMapper.MapToEntity<JobEntity, AddJobViewModel>(model);
+                job.Image = image;
+
+                using(Stream sw = model.CompanyLogoFile.InputStream)
+                {
+                    image = new byte[model.CompanyLogoFile.ContentLength];
+                    sw.Read(image, 0, model.CompanyLogoFile.ContentLength);
+                }
+                
+                CompanyEntity company = new CompanyEntity();
+                company.ContactEmail = model.CompanyContactEmail;
+                company.Name = model.CompanyName;
+                company.Url = model.CompanyUrl;
+                company.Logo = image;
+
+                CurrentSession.AddToState("NewJob", job);
+                CurrentSession.AddToState("NewJobCompany", company);
             }
             return View("Index",model);
         }
